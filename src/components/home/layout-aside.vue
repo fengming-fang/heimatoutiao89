@@ -3,7 +3,7 @@
   <div class="title">
        <img src="../../assets/img/logo_admin.png" alt="">
   </div>
-    <el-menu background-color="#353b4e" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu background-color="#353b4e" text-color="#fff" active-text-color="#ffd04b" style="width:231px">
         <el-menu-item>
             首页
         </el-menu-item>
@@ -18,7 +18,7 @@
               <el-menu-item>素材管理</el-menu-item>
         </el-submenu>
         <!-- 第二个二级导航 -->
-         <el-submenu index='2'>
+        <el-submenu index='2'>
               <template slot="title">
                  <span> 粉丝管理</span>
               </template>
@@ -27,7 +27,7 @@
               <el-menu-item>粉丝画像</el-menu-item>
               <el-menu-item>粉丝列表</el-menu-item>
         </el-submenu>
-          <el-menu-item>
+        <el-menu-item>
             账户信息
         </el-menu-item>
     </el-menu>
@@ -40,13 +40,16 @@ export default {
 }
 </script>
 
-<style lang=less secped>
+<style lang='less' scoped>
 .layout-aside{
-  width: 231px;
+  width: 230px;
+  overflow: hidden;
   .title{
-background-color: #2e2f32;
-text-align: center;
-padding: 10px 0;
+  background-color: #2e2f32;
+  text-align: center;
+  padding: 10px 0;
+   width: 229px;
+
     img {
       height: 35px
     }

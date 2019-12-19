@@ -3,18 +3,21 @@
     <el-col :span='6' class="top-left">
 
       <i class="el-icon-s-fold"></i>
-      <span>江苏传智播客教育科技股份有限公司</span>
+      <span >江苏传智播客教育科技股份有限公司</span>
     </el-col>
 
-    <el-col :span='8' class="top-right" >
+    <el-col :span='12' class="top-right" >
 
       <el-row type='flex' justify="end" align="middle">
-        <!-- <el-input size='small' placeholder="请输入搜索的文章内容" prefix-icon="el-icon-search"  v-model="input2">
-        </el-input> -->
+
+        <!-- <el-col :span=10>
+        <el-input size='small' placeholder="请输入搜索的文章内容" prefix-icon="el-icon-search"  >
+        </el-input>
+        </el-col> -->
 
         <img src="../../assets/img/header.jpg" alt="">
 
-        <el-dropdown>
+        <el-dropdown >
            <span>岂由天哉</span>
                  <!-- 下拉菜单  具名插槽 -->
                  <el-dropdown-menu slot="dropdown">
@@ -24,6 +27,7 @@
                       <el-dropdown-item>退出</el-dropdown-item>
                  </el-dropdown-menu>
         </el-dropdown>
+
      </el-row>
     </el-col>
   </el-row>
@@ -35,15 +39,24 @@ export default {
 }
 </script>
 
-<style lang='less' secped>
+<style lang='less' scoped>
   .layout-header{
-    height: 50px;
+    height: 60px;
     .top-right{
+
         img{
           width: 40px;
           height: 40px;
-          border-radius: 20px
+          border-radius: 20px;
+
         }
     }
+    .top-left{
+    margin-right: 20px;
+      .el-icon-s-fold{
+        margin-right: 5px;
+      }
+    }
+
   }
 </style>
