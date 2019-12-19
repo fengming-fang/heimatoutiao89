@@ -42,7 +42,7 @@ export default {
         check: false // 是否同意协议
       },
       loginRules: {
-        //   决定着校验规则  key(字段名):value(对象数组) => 一个对象就是一个校验规则
+        // 决定着校验规则  key(字段名):value(对象数组) => 一个对象就是一个校验规则
         // required 为true 就表示该字段必填 如果不填 就会提示消息
         mobile: [{ required: true, message: '请输入您的手机号' },
           { pattern: /^1[3456789]\d{9}$/, message: '请输入合法的手机号' }],
