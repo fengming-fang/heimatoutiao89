@@ -65,9 +65,22 @@ export default {
   methods: {
     // 提交登陆表单
     submitLogin () {
-      this.$refs.myForm.validate(function (isOK) {
+      this.$refs.myForm.validate((isOK) => {
         if (isOK) {
-          console.log('前端校验成功')
+          this.$axios({
+            url: '/authorizations', // 请求地址
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token)// 前端缓存令牌
+            this.$router.push('/home') // 验证成功跳转到主页面
+          }).catch(() => {
+            // elementUI的方法  输入错误弹出警告信息
+            this.$message({
+              message: '您的手机号或者验证码不正确',
+              type: 'warning'
+            })
+          })
         }
       })
     }
