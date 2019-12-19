@@ -13,8 +13,7 @@
 
 <!-- 右侧区域 -->
   <el-header>
-右侧头部
-
+  <layout-header></layout-header>
   </el-header>
 
   <el-main>
@@ -27,13 +26,15 @@
 </template>
 
 <script>
-import layoutAside from '../../components/home/layout-aside' // 引入
-
+import layoutAside from '../../components/home/layout-aside' // 引入左侧导航栏
+import layoutHeader from '../../components/home/layout-header' // 引入头部
 export default {
   // 局部注册
   components: {
-    'layout-aside': layoutAside
+    'layout-aside': layoutAside, // 注册左侧导航
+    'layout-header': layoutHeader// 注册头部
   }
+
 }
 </script>
 

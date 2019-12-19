@@ -8,7 +8,7 @@
             首页
         </el-menu-item>
         <!-- 第一个二级导航 -->
-        <el-submenu>
+        <el-submenu index='1'>
               <template slot="title">
                  <span> 内容管理</span>
               </template>
@@ -17,7 +17,8 @@
               <el-menu-item>评论列表</el-menu-item>
               <el-menu-item>素材管理</el-menu-item>
         </el-submenu>
-         <el-submenu>
+        <!-- 第二个二级导航 -->
+         <el-submenu index='2'>
               <template slot="title">
                  <span> 粉丝管理</span>
               </template>
