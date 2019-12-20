@@ -94,7 +94,7 @@ export default {
 //与其他单组件标签不同的`data-v-xxx`的唯一属性，style样式设定也会自动与本身组件的`data-v-xxx`联系起来，
 //这样就使得style样式只针对自己的组件起作用了
 .login{
- background-image: url(../../assets/img/login_bg.jpg);
+ background-image: url(../../assets/img/home4.jpg);
  height: 100vh;
 background-size: cover;
 display: flex;
