@@ -15,10 +15,10 @@
         </el-input>
         </el-col> -->
 
-        <img src="../../assets/img/header.jpg" alt="">
+        <img :src="userInfo.photo ? userInfo.photo : defaultImg" alt="">
 
         <el-dropdown >
-           <span>岂由天哉</span>
+              <span>{{ userInfo.name }}</span>
                  <!-- 下拉菜单  具名插槽 -->
                  <el-dropdown-menu slot="dropdown">
                      <!-- 下拉内容 -->
@@ -35,6 +35,25 @@
 
 <script>
 export default {
+  data () {
+    return {
+      userInfo: {}, // 用户信息
+      defaultImg: require('../../assets/img/header.jpg')// 先把地址转化为变量
+    }
+  },
+  created () {
+    let token = window.localStorage.getItem('user-token') // 获取令牌
+    // 查询数据
+    this.$axios({
+      url: '/user/profile',
+      //   headers参数
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(result => {
+      this.userInfo = result.data.data // 获取用户个人信息
+    })
+  }
 
 }
 </script>
