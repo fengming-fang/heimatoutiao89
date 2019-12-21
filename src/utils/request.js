@@ -11,4 +11,11 @@ axios.interceptors.request.use(function (config) {
 }, function () {
   // 执行请求失败
 })
+// 响应拦截
+axios.interceptors.response.use(function (response) {
+  // 成功时执行
+  return response.data ? response.data : {} // 解决当data不存在时  then中读取数据报错问题
+}, function () {
+  // 失败时执行 状态码 不是200 或者201/204
+})
 export default axios
