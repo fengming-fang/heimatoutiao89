@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import Component from './components/index'
+import './permission'
 
 axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 
