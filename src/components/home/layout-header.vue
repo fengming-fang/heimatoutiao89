@@ -42,14 +42,11 @@ export default {
     }
   },
   created () {
-    let token = window.localStorage.getItem('user-token') // 获取令牌
+    // let token = window.localStorage.getItem('user-token')  获取令牌  这个就不用了
     // 查询数据
     this.$axios({
-      url: '/user/profile',
+      url: '/user/profile'
       //   headers参数
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
     }).then(result => {
       this.userInfo = result.data.data // 获取用户个人信息
     })

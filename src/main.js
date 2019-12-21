@@ -4,11 +4,9 @@ import router from './router'
 import './styles/index.less'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import axios from 'axios'
+import axios from './utils/request' // 换成我自己的axios 因为我的里边由定义的token
 import Component from './components/index'
 import './permission'
-
-axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 
 Vue.config.productionTip = false
 Vue.use(Component)
