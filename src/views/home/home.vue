@@ -13,7 +13,7 @@ export default {
 
 <style lang='less' scoped>
     .home{
-        background-image: url('../../assets/img/home6.jpg');
+        // background-image: url('../../assets/img/home6.jpg');
         height: 100vh;
         background-size: cover;
     }
