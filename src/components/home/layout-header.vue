@@ -6,7 +6,7 @@
       <span >江苏传智播客教育科技股份有限公司</span>
     </el-col>
 
-    <el-col :span='12' class="top-right" >
+    <el-col :span='12' class="top-right"  v-cloak>
 
       <el-row type='flex' justify="end" align="middle">
 
@@ -38,7 +38,7 @@ export default {
   data () {
     return {
       userInfo: {}, // 用户信息
-      defaultImg: require('../../assets/img/header.jpg')// 先把地址转化为变量
+      defaultImg: require('../../assets/img/home4.jpg')// 先把地址转化为变量
     }
   },
   created () {
@@ -70,7 +70,9 @@ export default {
   .layout-header{
     height: 60px;
     .top-right{
-
+      [cloak]{
+        display: none
+      }
         img{
           width: 40px;
           height: 40px;
