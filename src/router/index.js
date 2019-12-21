@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/home'
 import Login from '../views/login'
 import Home2 from '../views/home/home'
+// import Commont from '../views/comment'
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,10 +19,13 @@ const routes = [
     children: [{
       path: '', // 二级路由 ，可以什么都不写 作为显示组件
       component: Home2
+    }, {
+      path: 'comment',
+      component: () => import('../views/comment/index.vue') // 按需加载
     }]
   }, {
     // 登录页
-    path: '/login',
+    path: '/login', // 完整地址 相对地址
     component: Login
   }
   // {
