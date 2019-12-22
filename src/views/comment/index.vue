@@ -92,7 +92,8 @@ export default {
       }).then(result => {
         this.list = result.data.results // 获取评论列表数据给本身data
         this.page.total = result.data.total_count // 获得文章的总条数
-        setTimeout(() => { this.loading = false }, 200) // 设置定时器
+        // setTimeout(() => { this.loading = false }, 200)  设置定时器
+        this.loading = false
       })
     },
 
