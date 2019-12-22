@@ -1,6 +1,6 @@
 <template>
-<!-- 卡片组件 -->
-  <el-card>
+<!-- 卡片组件 给一个加载状态  -->
+  <el-card v-loading="loading">
     <!-- 面包屑给了卡片的具名插槽 -->
        <bread-crumb slot="header">
           <!-- 插槽内容 -->
@@ -41,7 +41,7 @@
 export default {
   data () {
     return {
-
+      loading: false, // 加载状态 默认关闭
       list: [],
       page: {
         // 专门放置分页数据
@@ -51,6 +51,7 @@ export default {
       }
     }
   },
+
   methods: {
 
     // 页码改变事件
@@ -78,6 +79,7 @@ export default {
 
     // 请求评论列表数据
     getComment () {
+      this.loading = true // 打开loading状态
       // axios 是默认是get类型
       // query 参数 / 路由参数 地址参数 get参数  axios  params
       // body参数 给 data
@@ -89,7 +91,8 @@ export default {
         }
       }).then(result => {
         this.list = result.data.results // 获取评论列表数据给本身data
-        this.page.total = result.data.total_count
+        this.page.total = result.data.total_count // 获得文章的总条数
+        setTimeout(() => { this.loading = false }, 200) // 设置定时器
       })
     },
 
