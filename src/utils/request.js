@@ -56,5 +56,6 @@ axios.interceptors.response.use(function (response) {
   }
   Message({ type: 'warning', message }) // 提示消息
   // 状态码 提示
+  return Promise.reject(error) // 阻止默认
 })
 export default axios

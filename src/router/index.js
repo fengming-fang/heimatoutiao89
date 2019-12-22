@@ -21,10 +21,10 @@ const routes = [
       component: Home2
     }, {
       path: 'comment',
-      component: () => import('../views/comment') // 按需加载
+      component: () => import('../views/comment/index.vue') // 按需加载
     }, {
       path: 'material', // 素材列表
-      component: () => import('../views/material') // 按需加载
+      component: () => import('../views/material/index.vue') // 按需加载
     }]
   }, {
     // 登录页
