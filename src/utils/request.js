@@ -4,6 +4,8 @@ import { Message } from 'element-ui'
 // 请求拦截器
 axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 
+// axios.defaults // 默认axios选项
+
 axios.interceptors.request.use(function (config) {
   // 执行请求ok
   // config 是axios的所有配置
