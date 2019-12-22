@@ -19,7 +19,7 @@
            <!-- 放组件   作用域插槽  row column $index-->
            <template slot-scope="obj" >
              <el-button type='text' size="small">修改</el-button>
-             <el-button type='text' size="small" @click="closeOrOpen(obj.row)" :style="{color:obj.row.comment_status ? '关闭评论' : '打开评论' }">打开评论</el-button>
+             <el-button type='text' size="small" @click="closeOrOpen(obj.row)" :style="{color: obj.row.comment_status ? '#E6A23C' : '#409EFF' }">{{ obj.row.comment_status ? "关闭评论" : "打开评论" }}</el-button>
            </template>
          </el-table-column>
 
@@ -43,7 +43,7 @@ export default {
         this.$axios({
           method: 'put',
           url: '/comments/status',
-          params: { article_id: row.id },
+          params: { article_id: row.id.toString() },
           data: { allow_comment: !row.comment_status } // 状态是反着的
         }).then(() => {
           // 如果进入到then函数 一定成功
