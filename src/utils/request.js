@@ -7,7 +7,8 @@ axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 
 // axios.defaults // 默认axios选项
 axios.defaults.transformResponse = [function (data) {
-  return data ? JSONBig.parse(data) : {} // 处理大数字
+  // data有可能是个空字符串  直接处理一下 保证这个地方不会报错
+  return data ? JSONBig.parse(data) : {} // JSONbig.parse 替换 JSON.parse  保证数字的正确
 }]
 axios.interceptors.request.use(function (config) {
   // 执行请求ok
