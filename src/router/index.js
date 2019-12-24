@@ -25,7 +25,11 @@ const routes = [
     }, {
       path: 'material', // 素材列表
       component: () => import('../views/material/index.vue') // 按需加载
+    }, {
+      path: 'articles', // 新建页面 挂载路由
+      component: () => import('../views/articles') // 按需加载
     }]
+
   }, {
     // 登录页
     path: '/login', // 完整地址 相对地址
