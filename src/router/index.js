@@ -27,7 +27,7 @@ const routes = [
       component: () => import('../views/material/index.vue') // 按需加载
     }, {
       path: 'articles', // 新建页面 挂载路由
-      component: () => import('../views/articles') // 按需加载
+      component: () => import('../views/articles/index.vue') // 按需加载
     }]
 
   }, {
