@@ -29,6 +29,9 @@ const routes = [
       path: 'articles', // 新建页面 挂载路由
       component: () => import('../views/articles/index.vue') // 按需加载
     }, {
+      path: 'publish/:articleId', // 定义动态路由参数  此规则只匹配修改文章
+      component: () => import('../views/publish') // 按需加载
+    }, {
       path: 'publish', // 新建页面 挂载路由
       component: () => import('../views/publish/index.vue') // 按需加载
     }]
