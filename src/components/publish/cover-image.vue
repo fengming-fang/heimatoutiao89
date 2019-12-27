@@ -4,6 +4,8 @@
       <div v-for="(item,index) in list" :key="index" class='cover-item'>
          <img src="../../assets/img/pic_bg.png" alt="">
       </div>
+      <!-- 生成的元素是在body上 -->
+      <el-dialog></el-dialog>
   </div>
 </template>
 
