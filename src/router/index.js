@@ -34,7 +34,11 @@ const routes = [
     }, {
       path: 'publish', // 新建页面 挂载路由
       component: () => import('../views/publish/index.vue') // 按需加载
-    }]
+    }, {
+      path: 'account', // 新建页面 挂载路由
+      component: () => import('../views/account') // 按需加载
+    }
+    ]
 
   }, {
     // 登录页
