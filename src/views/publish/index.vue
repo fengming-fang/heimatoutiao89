@@ -15,7 +15,7 @@
 
         <el-form-item label="封面"  style="margin-top:100px">
           <!-- 单选组  v-model="封面类型" -->
-          <el-radio-group @change="ChangeType" v-model="formData.cover.type">
+          <el-radio-group @change="changeType" v-model="formData.cover.type">
             <el-radio :label="1">单图</el-radio>
             <el-radio :label="3">三图</el-radio>
             <el-radio :label="0">无图</el-radio>
@@ -24,7 +24,7 @@
         </el-form-item>
 
         <!-- 放置一个封面组件  父组件  => 子组件 props -->
-        <cover-image :list="formData.cover.images"></cover-image>
+        <cover-image  @clickOneImg="receiveImg"  :list="formData.cover.images"></cover-image>
         <el-form-item prop="channel_id" label="频道">
             <el-select v-model="formData.channel_id">
                <el-option v-for="item in channels" :key="item.id" :value="item.id" :label="item.name"></el-option>
@@ -94,9 +94,22 @@ export default {
     // }
   },
   methods: {
-
+    receiveImg (img, index) {
+      //  接收到数据之后 修改 images数组 =>但是images是个数组  ['','','']
+      // 有地址 有索引 能不能改images
+      // this.formData.cover.images[index] = img // 直接修改数据 是不可以的!
+      // Vue响应式原理 响应式数据 => 数据发生变化(要能被Vue监控到) => 视图变化
+      // 数组 => 新数组  =>就会触发响应式视图更新 => push/pop/shift/unshift/slice
+      // this.formData.cover.images = this.formData.cover.images.map(function (item, i) {
+      //   if (i === index) {
+      //     return img
+      //   }
+      //   return item
+      // })
+      this.formData.cover.images = this.formData.cover.images.map((item, i) => i === index ? img : item)
+    },
     // 切换到底几张图片类型时触发
-    ChangeType () {
+    changeType () {
       //  this指向组件实例
       if (this.formData.cover.type === 0 || this.formData.cover.type === -1) {
         // 无图或者自动模式

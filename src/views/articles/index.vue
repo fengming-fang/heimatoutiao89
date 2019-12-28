@@ -15,7 +15,7 @@
         <!-- 单选框组 -->
         <!-- <el-radio-group v-model="formData.status" @change="changeCondition" > -->
         <!-- 第一种方式用  @change="changeCondition" 第二种方式 用watch-->
-        <el-radio-group  v-model="formData.status">
+        <el-radio-group v-model="formData.status">
         <!-- 全部这个5是默认的,在传参的时候判断一下 是不是5 如果是5 就传个null -->
           <el-radio :label="5">全部</el-radio>
           <el-radio :label="0">草稿</el-radio>
