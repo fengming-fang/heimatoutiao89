@@ -1,7 +1,7 @@
 <template>
 <div class="layout-aside">
   <div class="title">
-       <img :src="collaspse ? smallImg : bigImg" alt="">
+       <img :src="collaspse ? smallImg : bigImg" alt="" >
   </div>
     <el-menu :collapse="collaspse" router :style="{width: collaspse ? '60px': '230px'}"
         background-color="#353b4e" text-color="#fff" active-text-color="#ffd04b" >
@@ -57,7 +57,6 @@ export default {
 
 <style lang='less' scoped>
 .layout-aside{
-  width: 230px;
   overflow: hidden;
   .el-menu {
         border-right: none;
@@ -66,7 +65,6 @@ export default {
   background-color: #2e2f32;
   text-align: center;
   padding: 10px 0;
-  width: 229px;
 
     img {
       height: 35px
