@@ -2,7 +2,7 @@
   <el-row class="layout-header" type='flex' justify='space-between' align='middle'>
     <el-col :span='6' class="top-left">
 
-      <i class="el-icon-s-fold"></i>
+      <i @click="collaspseOrOpen" :class="{'el-icon-s-unfold': collaspse,'el-icon-s-fold': !collaspse}"></i>
       <span >江苏传智播客教育科技股份有限公司</span>
     </el-col>
 
@@ -39,6 +39,7 @@ export default {
 
   data () {
     return {
+      collaspse: false, // 是否折叠
       userInfo: {}, // 用户信息
       defaultImg: require('../../assets/img/home4.jpg')// 先把地址转化为变量
     }
@@ -56,6 +57,14 @@ export default {
   },
 
   methods: {
+
+    collaspseOrOpen () {
+      // 直接取反
+      this.collaspse = !this.collaspse // 直接返回
+      // 通知要改变宽度的组件
+      eventBus.$emit('changeCollapse') // 改变了折叠状态
+    },
+
     getUserInfo () {
       this.$axios({
         url: '/user/profile'
@@ -97,6 +106,9 @@ export default {
     }
     .top-left{
     margin-right: 20px;
+        i{
+            font-size:22px;
+        }
       .el-icon-s-fold{
         margin-right: 5px;
       }
