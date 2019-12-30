@@ -63,6 +63,8 @@ export default {
         // background-image: url('../../assets/img/home6.jpg');
         height: 100vh;
         background-size: cover;
+        display: flex;
+        justify-content: center;
         .echarts{
           width: 700px;
           height: 700px;
