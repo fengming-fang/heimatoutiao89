@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { getChannels } from '../../actions/articles'
 export default {
   data () {
     return {
@@ -122,12 +123,9 @@ export default {
     },
 
     //   获取频道
-    getChannels () {
-      this.$axios({
-        url: '/channels'
-      }).then(result => {
-        this.channels = result.data.channels // 获取频道数据
-      })
+    async getChannels () {
+      let result = await getChannels()
+      this.channels = result.data.channels // 获取频道数据
     },
 
     // 发布文章
